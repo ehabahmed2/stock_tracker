@@ -1,0 +1,49 @@
+## Day 1: Core Setup
+
+    Create Django project + apps: Done
+
+    Configure PostgreSQL: Done
+
+    JWT authentication setup: Done
+
+    User registration/login endpoints: Done
+
+## Day 2: Stock Data Pipeline
+
+    Stock model with symbol/price fields: Done
+
+    Celery task to fetch prices (mock API first)
+
+    Periodic task scheduling
+
+    Stock list/detail API endpoints
+
+Day 3: Alert System
+
+    Alert model with threshold/duration fields
+
+    Alert creation API
+
+    Basic threshold checking logic
+
+    TriggeredAlert model
+
+Day 4: Notifications & Edge Cases
+
+    Email notification system
+
+    Duration alert state tracking
+
+    Alert deactivation logic
+
+    Testing edge cases (exact thresholds)
+
+Day 5: Deployment & Polish
+
+    AWS EC2/RDS setup
+
+    Production-ready configs
+
+    Comprehensive README
+
+    Video walkthrough
