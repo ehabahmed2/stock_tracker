@@ -1,5 +1,6 @@
 import os
 from celery import Celery
+from celery.schedules import crontab  # this for scheduling
 
 
 
@@ -21,3 +22,14 @@ app.autodiscover_tasks()
 @app.task(bind=True, ignore_result=True)
 def debug_task(self):
     print(f'Request: {self.request!r}')
+    
+
+
+
+# to run check every 5 minutes
+app.conf.beat_schedule = {
+    'fetch-stocks-every-5-minutes': {
+        'task': 'stocks.tasks.fetch_stock_prices',
+        'schedule': crontab(minute='*/5'),
+    },
+}

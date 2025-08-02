@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_celery_beat',
     'accounts',
     'alerts',
     'stocks',
@@ -155,3 +156,5 @@ CELERAY_BROKER_URL = config('CELERAY_BROKER_URL')
 CELERAY_ACCEPT_CONTENT = ['json']
 
 CELERAY_TASK_SERIALIZER = 'json'
+
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
