@@ -17,7 +17,7 @@ This is a simple Django REST API for tracking stock prices using Celery and JWT 
 
 ## 🔐 Authentication
 
-Use `/api/token/` to get your JWT access and refresh tokens.
+Use `/api/accounts/register/` then `/api/accounts/login/` to get your JWT access and refresh tokens.
 
 ## 📈 API Endpoints
 
