@@ -26,8 +26,10 @@ Use `/api/accounts/register/` then `/api/accounts/login/` to get your JWT access
 | GET | `/api/stocks/` | List all stocks | ✅ |
 | GET | `/api/stocks/<id>/` | Get stock detail | ✅ |
 | GET | `/api/stocks/fetch-symbol/?symbol=TSLA` | Fetch or add stock by symbol | ✅ |
-| POST | `/api/accounts/register/` | To register a user | ✅ |
-| POST | `/api/token/login/` | To Log in | ✅ |
+| POST | `/api/accounts/register/` | To register a user | X |
+| POST | `/api/token/login/` | To Log in | X |
+
+- To access the API doc go to  `base_link/docs/`
 
 ## 📥 Setup (Local)
 
