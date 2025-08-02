@@ -26,14 +26,14 @@ Use `/api/token/` to get your JWT access and refresh tokens.
 | GET | `/api/stocks/` | List all stocks | ✅ |
 | GET | `/api/stocks/<id>/` | Get stock detail | ✅ |
 | GET | `/api/stocks/fetch-symbol/?symbol=TSLA` | Fetch or add stock by symbol | ✅ |
-| POST | `/api/token/` | Get access + refresh tokens | ❌ |
-| POST | `/api/token/refresh/` | Refresh access token | ❌ |
+| POST | `/api/accounts/register/` | To register a user | ✅ |
+| POST | `/api/token/login/` | To Log in | ✅ |
 
 ## 📥 Setup (Local)
 
 ```bash
-git clone ...
-cd project
+git clone https://github.com/ehabahmed2/stock_tracker
+cd stock_tracker
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
