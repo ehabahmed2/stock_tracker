@@ -57,8 +57,6 @@ class StockListAPIView(generics.ListAPIView):
     serializer_class = StockSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-class StockDetailAPIView(generics.ListAPIView): 
-    pass
 
 
 
