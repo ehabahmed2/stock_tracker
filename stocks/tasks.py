@@ -2,6 +2,7 @@ from decouple import config
 import requests
 from celery import shared_task
 from .models import Stock
+from django.utils import timezone
 
 # define our api and configurateion
 api_key = config('F_API_KEY')
@@ -19,5 +20,6 @@ def fetch_stock_prices():
         if data:
             price = data[0].get("price")
             stock.last_price = price
+            stock.updated_at = timezone.now()
             stock.save()
 
