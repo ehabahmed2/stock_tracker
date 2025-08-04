@@ -26,10 +26,14 @@ def debug_task(self):
 
 
 
-# to run check every 5 minutes
+# to run check 
 app.conf.beat_schedule = {
-    'fetch-stocks-every-5-minutes': {
+    'fetch-stocks-every-minute': {
         'task': 'stocks.tasks.fetch_stock_prices',
+        'schedule': crontab(minute='*/5'),
+    },
+    'check-alerts-every-minute': {
+        'task': 'alerts.tasks.check_alerts',
         'schedule': crontab(minute='*/5'),
     },
 }

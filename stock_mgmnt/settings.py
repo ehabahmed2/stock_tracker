@@ -155,11 +155,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # redis configurations
 
-CELERAY_BROKER_URL = config('CELERAY_BROKER_URL')
+CELERY_BROKER_URL = config('CELERY_BROKER_URL')
 
-CELERAY_ACCEPT_CONTENT = ['json']
+CELERY_ACCEPT_CONTENT = ['json']
 
-CELERAY_TASK_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
 
@@ -174,3 +174,17 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,  # Issues new refresh token on each refresh
     'BLACKLIST_AFTER_ROTATION': True,  # Invalidates old refresh tokens
 }
+
+
+
+# email configurations for alerts
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+
+
+
