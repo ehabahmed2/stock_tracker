@@ -45,7 +45,7 @@ Use `/api/accounts/register/` then `/api/accounts/login/` to get your JWT access
 ```json
 {
     "stock": "AAPL",
-    "condition": "above",
+    "condition": "gt",
     "target_price": 150.00
 }
 ```
@@ -58,7 +58,7 @@ Use `/api/accounts/register/` then `/api/accounts/login/` to get your JWT access
 ### Notes:
 - Alerts are user-specific
 - user field is automatically set
-- Use condition "above" or "below" target price
+- Use condition "gt" or "lt" target price
 
 
 ## 📥 Setup (Local)
