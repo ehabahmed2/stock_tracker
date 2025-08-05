@@ -26,7 +26,7 @@ def debug_task(self):
 
 
 
-# to run check 
+# to run checks 
 app.conf.beat_schedule = {
     'fetch-stocks-every-minute': {
         'task': 'stocks.tasks.fetch_stock_prices',
