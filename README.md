@@ -77,3 +77,4 @@ python manage.py runserver
 ```
 ## 📚 API Documentation
 - Access interactive API docs at: base_url/docs/
+- Access info for API at: base_url/redoc/
