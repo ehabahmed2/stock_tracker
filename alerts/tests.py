@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from alerts.models import Alert
 from stocks.models import Stock
 from django.contrib.auth.models import User
@@ -10,7 +10,7 @@ from django.core import mail
 
 
 
-
+@override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
 class AlertTestCase(TestCase):
     def setUp(self):
         self.user = User.objects.create(username="testuser", email="test@gmail.com")

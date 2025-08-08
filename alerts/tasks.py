@@ -10,7 +10,7 @@ from decouple import config
 def check_alerts():
     print("## started mission  :D ##") 
     now = timezone.now()
-    alerts = Alert.objects.filter(is_active=True, triggered=False)
+    alerts = Alert.objects.filter(is_active=True)
     
     for alert in alerts:
         stock = alert.stock
@@ -20,7 +20,11 @@ def check_alerts():
         # Skip if stock price hasn't been updated
         if not stock.updated_at:
             continue
-            
+        
+        # Skip if we don't have a price yet
+        if current_price is None:
+            continue
+        
         # Check conditions
         condition_met = (
             (alert.condition == 'gt' and current_price > target_price) or
@@ -53,7 +57,7 @@ def check_alerts():
 def send_alert(alert, current_price):
     user_email = alert.user.email
     stock_symbol = alert.stock.symbol
-    condition = ">" if alert.condition == "gt" else "<"
+    condition = "Greater than" if alert.condition == "gt" else "Less than"
 
     message = f"Stock {stock_symbol} is now {condition} {alert.target_price} (Current: {current_price})"
 
@@ -70,10 +74,9 @@ def send_alert(alert, current_price):
             fail_silently=False,
         )
 
+    alert.is_active = False
     alert.triggered = True
     alert.save()
-    # disable this alert
-    alert.is_active = False
 
 
 
