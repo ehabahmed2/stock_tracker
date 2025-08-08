@@ -44,13 +44,13 @@ Use `/api/accounts/register/` then `/api/accounts/login/` to get your JWT access
 ### Creating an Alert (POST `/api/alerts/`)
 ```json
 {
-    "stock": "AAPL",
-    "condition": "gt",
-    "target_price": 150.00
+  "stock": 1,
+  "condition": "gt",
+  "target_price": 150.00
 }
 ```
 ### Required Fields:
-- stock: Stock symbol (string)
+- stock: Stock ID (int)
 - condition: "gt" for greater than or "lt" for less than
 - target_price: Price threshold (decimal)
 - duration_minutes: number of minutes and it is OPTIONAL (integer)
